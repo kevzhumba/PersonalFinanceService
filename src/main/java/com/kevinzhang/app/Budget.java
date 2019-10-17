@@ -24,12 +24,14 @@ public class Budget {
             throw new Error("Expense is negative");
         }
         expenses.put(s, d);
+        totalExpenses += d;
     }
 
     public Double removeExpense(String s) throws Error {
         if(!expenses.containsKey(s)) {
             throw new Error("Expense does not exist");
         }
+        totalExpenses -= expenses.get(s) ;
         return expenses.remove(s);
     }
 }
